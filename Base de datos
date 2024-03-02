@@ -1,0 +1,20 @@
+CREATE TABLE Cotizaciones (
+Cotizacion_ID INT PRIMARY KEY,
+Cliente_ID INT,
+Diseño VARCHAR(250),
+DETALLE_COTIZACION VARCHAR(250),
+FOREIGN KEY (Cliente_ID) REFERENCES Clientes(ClienteID)
+);
+
+CREATE TABLE EVENTO_AGENDA(
+Evento_ID INT PRIMARY KEY ,
+Cliente_ID int,
+Descripcion varchar(230),
+Foreign key (Cliente_ID) references Clientes(ClienteID)
+);
+
+CREATE TABLE ADMINISTRADORES(
+AdminID INT PRIMARY KEY,
+Nombre_Usuario Varchar(15),
+Contra varchar(10)
+);
