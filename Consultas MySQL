@@ -1,0 +1,22 @@
+-- 4. Clientes que más han pagado por una categoría de tatuaje
+SELECT ClienteID, Nombre, Apellido, Categoria, MAX(MontoPagado) AS MontoMaximo
+FROM Transacciones
+JOIN Tatuajes ON Transacciones.TatuajeID = Tatuajes.TatuajeID
+JOIN Clientes ON Transacciones.ClienteID = Clientes.ClienteID
+GROUP BY ClienteID, Categoria;
+
+-- 5. Gráfico de tatuajes por zona del cuerpo por rango de edad
+SELECT ZonaCuerpo, COUNT(*) AS Cantidad
+FROM Tatuajes
+JOIN Transacciones ON Tatuajes.TatuajeID = Transacciones.TatuajeID
+JOIN Clientes ON Transacciones.ClienteID = Clientes.ClienteID
+WHERE FechaNacimiento IS NOT NULL
+GROUP BY ZonaCuerpo, FLOOR(DATEDIFF(CURDATE(), FechaNacimiento) / 365 / 10);
+
+-- 6. Gráfico de rango de edades y técnicas más aplicadas
+SELECT FLOOR(DATEDIFF(CURDATE(), FechaNacimiento) / 10) AS RangoEdad, Tecnica, COUNT(*) AS Cantidad
+FROM Tatuajes
+JOIN Transacciones ON Tatuajes.TatuajeID = Transacciones.TatuajeID
+JOIN Clientes ON Transacciones.ClienteID = Clientes.ClienteID
+WHERE FechaNacimiento IS NOT NULL
+GROUP BY RangoEdad, Tecnica;
