@@ -14,21 +14,27 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/pageindex.css" />
     <!-- JS -->
     <script src="./assets/js/main.js" defer></script>
 </head>
 <body>
-    <header class="indexHeader">
-        <?php include 'components/logo.php'; ?>
-        <div class="access_buttons">
-            <div class="access_btn me-3"><a href="/signup">Registrarse</a></div>
-            <div class="access_btn"><a href="/login">Iniciar sesión</a></div>
+    <header>
+        <div class="main_buttons">
+            <div class="main_btn"><a href="/signup">Registrarse</a></div>
+            <div class="main_btn"><a href="/login">Iniciar sesión</a></div>
         </div>
     </header>
-    <main class="coverImageContainer">
-        <section class="coverImage"></section>
+    <main>
+        <section class="main">
+            <h1 class="main_title"><span style="color: #F29727;">Nebularte</span><br> Tattoo</h1>
+            <p class="main_description">Una app diseñada para mejorar tu experiencia gastronómica!</p>
+            
+        </section>
     </main>
-    <footer></footer>
+    <footer class="main_footer">
+        <p>&copy; 2024 <span style="color: #F29727;">Nebularte</span> Tattoo</p>
+    </footer>
+    <script src="../static/js/app.js"></script>
 </body>
 </html>
