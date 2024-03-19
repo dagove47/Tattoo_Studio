@@ -28,7 +28,7 @@
     <main>
         <section class="main">
             <h1 class="main_title"><span style="color: #F29727;">Nebularte</span><br> Tattoo</h1>
-            <p class="main_description">Una app diseñada para mejorar tu experiencia gastronómica!</p>
+            <p class="main_description">El arte del tatuaje en Black & Grey!</p>
             
         </section>
     </main>
