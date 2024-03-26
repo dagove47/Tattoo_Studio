@@ -56,10 +56,6 @@
 
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31435.03710849209!2d-84.19746837242239!3d9.985465683396926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fa32fcfe0c5f%3A0x5c773032646dc470!2zSGVyZWRpYSwgQmVsw6lu!5e0!3m2!1ses-419!2scr!4v1711256820770!5m2!1ses-419!2scr"
                                      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-=======
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.5107121645106!2d121.00902407510334!3d14.455338186013963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397cff4f4f3f791%3A0x19d8558809dd3b79!2sTattoo%20Nebula!5e0!3m2!1ses-419!2scr!4v1711247612683!5m2!1ses-419!2scr"
-                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
                             </div>
                         </div>
                     </div>
@@ -73,7 +69,5 @@
     <script src="../static/js/app.js"></script>
 </body>
 
-</html>
-=======
 </html>
 
