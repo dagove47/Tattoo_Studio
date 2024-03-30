@@ -54,3 +54,11 @@ AdminID INT PRIMARY KEY,
 Nombre_Usuario Varchar(15),
 Contra varchar(10)
 );
+
+CREATE TABLE Contactos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255),
+    correo VARCHAR(255),
+    mensaje TEXT
+);
+
