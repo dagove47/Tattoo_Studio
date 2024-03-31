@@ -1,20 +1,62 @@
-CREATE TABLE Cotizaciones (
-Cotizacion_ID INT PRIMARY KEY,
-Cliente_ID INT,
-Diseño VARCHAR(250),
-DETALLE_COTIZACION VARCHAR(250),
-FOREIGN KEY (Cliente_ID) REFERENCES Clientes(ClienteID)
+CREATE DATABASE studio_tatto;
+
+-- Seleccionar la base de datos
+USE Studio_tatto;
+
+-- Crear la tabla Clientes
+CREATE TABLE Clientes (
+    ClienteID INT PRIMARY KEY,
+    Nombre VARCHAR(255),
+    Apellido VARCHAR(255),
+    CorreoElectronico VARCHAR(255),
+    Contraseña VARCHAR(255),
+    FechaNacimiento DATE
 );
 
-CREATE TABLE EVENTO_AGENDA(
-Evento_ID INT PRIMARY KEY ,
-Cliente_ID int,
-Descripcion varchar(230),
-Foreign key (Cliente_ID) references Clientes(ClienteID)
+-- Crear la tabla Tatuajes
+CREATE TABLE Tatuajes (
+    TatuajeID INT PRIMARY KEY,
+    NombreTatuaje VARCHAR(255),
+    Categoria VARCHAR(255),
+    ZonaCuerpo VARCHAR(255),
+    Tecnica VARCHAR(255),
+    DiseñoURL VARCHAR(255)
 );
 
-CREATE TABLE ADMINISTRADORES(
-AdminID INT PRIMARY KEY,
-Nombre_Usuario Varchar(15),
-Contra varchar(10)
+-- Crear la tabla Transacciones
+CREATE TABLE Transacciones (
+    TransaccionID INT PRIMARY KEY,
+    ClienteID INT,
+    TatuajeID INT,
+    MontoPagado DECIMAL(10, 2),
+    FechaTransaccion DATE,
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
+    FOREIGN KEY (TatuajeID) REFERENCES Tatuajes(TatuajeID)
 );
+
+
+Las consultas que se van a realizar para poder montar los dashboard
+
+-- 1. Clientes que más han gastado en un año
+SELECT ClienteID, Nombre, Apellido, SUM(MontoPagado) AS GastoTotal
+FROM Transacciones
+JOIN Clientes ON Transacciones.ClienteID = Clientes.ClienteID
+WHERE YEAR(FechaTransaccion) = [Año Deseado]
+GROUP BY ClienteID
+ORDER BY GastoTotal DESC
+LIMIT 5;
+
+
+-- 2 Categorías de Tatuajes más Populares:
+
+SELECT Categoria,COUNT(*) AS Cantidad
+FROM Tatuajes
+GROUP BY Categoria;
+
+-- 3. Listado de clientes por zona del cuerpo
+SELECT ClienteID, Nombre, Apellido, ZonaCuerpo
+FROM Tatuajes
+JOIN Transacciones ON Tatuajes.TatuajeID = Transacciones.TatuajeID
+JOIN Clientes ON Transacciones.ClienteID = Clientes.ClienteID
+WHERE ZonaCuerpo IS NOT NULL;
+
