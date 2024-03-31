@@ -34,29 +34,31 @@ CREATE TABLE Transacciones (
     FOREIGN KEY (TatuajeID) REFERENCES Tatuajes(TatuajeID)
 );
 
+CREATE TABLE Cotizaciones (
+Cotizacion_ID INT PRIMARY KEY,
+Cliente_ID INT,
+Diseño VARCHAR(250),
+DETALLE_COTIZACION VARCHAR(250),
+FOREIGN KEY (Cliente_ID) REFERENCES Clientes(ClienteID)
+);
 
-Las consultas que se van a realizar para poder montar los dashboard
+CREATE TABLE EVENTO_AGENDA(
+Evento_ID INT PRIMARY KEY ,
+Cliente_ID int,
+Descripcion varchar(230),
+Foreign key (Cliente_ID) references Clientes(ClienteID)
+);
 
--- 1. Clientes que más han gastado en un año
-SELECT ClienteID, Nombre, Apellido, SUM(MontoPagado) AS GastoTotal
-FROM Transacciones
-JOIN Clientes ON Transacciones.ClienteID = Clientes.ClienteID
-WHERE YEAR(FechaTransaccion) = [Año Deseado]
-GROUP BY ClienteID
-ORDER BY GastoTotal DESC
-LIMIT 5;
+CREATE TABLE ADMINISTRADORES(
+AdminID INT PRIMARY KEY,
+Nombre_Usuario Varchar(15),
+Contra varchar(10)
+);
 
-
--- 2 Categorías de Tatuajes más Populares:
-
-SELECT Categoria,COUNT(*) AS Cantidad
-FROM Tatuajes
-GROUP BY Categoria;
-
--- 3. Listado de clientes por zona del cuerpo
-SELECT ClienteID, Nombre, Apellido, ZonaCuerpo
-FROM Tatuajes
-JOIN Transacciones ON Tatuajes.TatuajeID = Transacciones.TatuajeID
-JOIN Clientes ON Transacciones.ClienteID = Clientes.ClienteID
-WHERE ZonaCuerpo IS NOT NULL;
+CREATE TABLE Contactos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255),
+    correo VARCHAR(255),
+    mensaje TEXT
+);
 
