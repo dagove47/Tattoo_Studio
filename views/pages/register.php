@@ -15,7 +15,7 @@
 
 <body class="signup_body">
     <section class="access">
-        <form method="POST">
+        <form method="POST" action="../../controllers/registerController.php">
             <input class="accessInput" type="text" name="name" placeholder="Nombre" required>
             <input class="accessInput" type="text" name="lastname" placeholder="Apellidos" required>
             <input class="accessInput" type="email" name="email" placeholder="Correo electrónico" required>
