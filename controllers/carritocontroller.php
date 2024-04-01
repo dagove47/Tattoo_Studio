@@ -1,88 +1,85 @@
-import com.proyecto.domain.Articulo;
-import com.proyecto.domain.Item;
-import com.proyecto.domain.Pedido;
-import com.proyecto.service.ArticuloService;
-import com.proyecto.service.ItemService;
-import com.proyecto.service.PedidoService;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
+<?php
 
-@Controller
-@Slf4j
-public class CarritoController {
+class CarritoController {
+    private $carrito;
 
-    @Autowired
-    private ItemService itemService;
-    @Autowired
-    private ArticuloService articuloService;
-    @Autowired
-    private PedidoService pedidoService;
-
-    //Para ver el carrito
-    @GetMapping("/carrito/listado")
-    public String inicio(Model model) {
-        var items = itemService.gets();
-        model.addAttribute("items", items);
-        var carritoTotalVenta = 0;
-        for (Item i : items) {
-            carritoTotalVenta += (i.getCantidad() * i.getPrecio());
+    public function __construct() {
+        // Inicializa el carrito de compras
+        if (!isset($_SESSION['carrito'])) {
+            $_SESSION['carrito'] = [];
         }
-        model.addAttribute("carritoTotal", carritoTotalVenta);
-        return "/carrito/listado";
+        $this->carrito = &$_SESSION['carrito'];
     }
 
-    //Para Agregar un tatuaje al carrito
-    @GetMapping("/carrito/agregar/{idTatuaje}")
-    public ModelAndView agregarItem(Model model, Item item) {
-        Item item2 = itemService.get(item);
-        if (item2 == null) {
-            Tatuaje tatuaje = tatuajeService.getTatuaje(item);
-            item2 = new Item(tatuaje);
+    // Método para agregar un tatuaje al carrito
+    public function agregarTatuaje($idTatuaje, $cantidad = 1) {
+        if (isset($this->carrito[$idTatuaje])) {
+            $this->carrito[$idTatuaje]['cantidad'] += $cantidad;
+        } else {
+            $this->carrito[$idTatuaje] = ['id' => $idTatuaje, 'cantidad' => $cantidad];
         }
-        itemService.save(item2);
-        var lista = itemService.gets();
-        var totalCarritos = 0;
-        var carritoTotalVenta = 0;
-        for (Item i : lista) {
-            totalCarritos += i.getCantidad();
-            carritoTotalVenta += (i.getCantidad() * i.getPrecio());
+    }
+
+    // Método para eliminar un tatuaje del carrito
+    public function eliminarTatuaje($idTatuaje) {
+        if (isset($this->carrito[$idTatuaje])) {
+            unset($this->carrito[$idTatuaje]);
         }
-        model.addAttribute("listaItems", lista);
-        model.addAttribute("listaTotal", totalCarritos);
-        model.addAttribute("carritoTotal", carritoTotalVenta);
-        return new ModelAndView("/carrito/fragmentosCarrito :: verCarrito");
     }
 
-    //Para mofificar un tatuaje del carrito
-    @GetMapping("/carrito/modificar/{idArticulo}")
-    public String modificarItem(Item item, Model model) {
-        item = itemService.get(item);
-        model.addAttribute("item", item);
-        return "/carrito/modifica";
+    // Método para actualizar la cantidad de un tatuaje en el carrito
+    public function actualizarCantidad($idTatuaje, $cantidad) {
+        if (isset($this->carrito[$idTatuaje])) {
+            $this->carrito[$idTatuaje]['cantidad'] = $cantidad;
+        }
     }
 
-    //Para eliminar un tatuaje del carrito
-    @GetMapping("/carrito/eliminar/{idArticulo}")
-    public String eliminarItem(Item item) {
-        itemService.delete(item);
-        return "redirect:/carrito/listado";
-    } 
-
-    //Para actualizar un tatuaje del carrito (cantidad)
-    @PostMapping("/carrito/guardar")
-    public String guardarItem(Item item) {
-        itemService.actualiza(item);
-        return "redirect:/carrito/listado";
+    // Método para vaciar el carrito
+    public function vaciarCarrito() {
+        $this->carrito = [];
     }
-    
-    //Para facturar los tatuajes del carrito... no implementado...
-    @PostMapping("/carrito/facturar")
-    public String facturarCarrito(Pedido pedido) {
-        return "index";
+
+    // Método para obtener el contenido del carrito
+    public function obtenerContenidoCarrito() {
+        return $this->carrito;
+    }
+
+    // Método para calcular el total de la compra
+    public function calcularTotal() {
+        $total = 0;
+        foreach ($this->carrito as $item) {
+            // Aquí podrías obtener el precio del tatuaje desde la base de datos
+            // y multiplicarlo por la cantidad
+            $total += $item['cantidad'] * obtenerPrecioTatuajePorId($item['id']);
+        }
+        return $total;
     }
 }
+
+// Función para obtener el precio de un tatuaje desde la base de datos (simulada)
+function obtenerPrecioTatuajePorId($idTatuaje) {
+    // Supongamos que aquí consultas la base de datos para obtener el precio del tatuaje con el ID proporcionado
+    // Aquí deberías reemplazar este ejemplo con tu lógica real para obtener el precio
+    // Retorna un precio ficticio para este ejemplo
+    $precios = [
+        1 => 50, // Precio del tatuaje con ID 1
+        2 => 70, // Precio del tatuaje con ID 2
+        // Agrega más precios según tu base de datos
+    ];
+    return isset($precios[$idTatuaje]) ? $precios[$idTatuaje] : 0; // Si no se encuentra el precio, retorna 0
+}
+
+// Ejemplo de uso
+session_start(); // Inicia la sesión si no está iniciada
+$carritoController = new CarritoController();
+$carritoController->agregarTatuaje(1, 2); // Agregar 2 unidades del tatuaje con ID 1 al carrito
+$carritoController->agregarTatuaje(2, 1); // Agregar 1 unidad del tatuaje con ID 2 al carrito
+$carritoController->eliminarTatuaje(2); // Eliminar el tatuaje con ID 2 del carrito
+$carritoController->actualizarCantidad(1, 3); // Actualizar la cantidad del tatuaje con ID 1 a 3 unidades
+$contenidoCarrito = $carritoController->obtenerContenidoCarrito(); // Obtener el contenido actual del carrito
+$totalCompra = $carritoController->calcularTotal(); // Calcular el total de la compra
+
+// Imprime el contenido del carrito y el total de la compra (solo para fines de demostración)
+echo "Contenido del carrito:<br>";
+print_r($contenidoCarrito);
+echo "<br>Total de la compra: $totalCompra";
