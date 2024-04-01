@@ -15,7 +15,7 @@
 
 <body class="login_body">
     <section class="access">
-        <form method="POST">
+        <form method="POST" action="../../controllers/loginController.php">
             <input class="accessInput" type="email" name="email" placeholder="Correo electrónico" required>
             <input class="accessInput" type="password" name="password" placeholder="Contraseña" required>
             <input class="accessInput submit_btn" type="submit" value="Iniciar sesión">
