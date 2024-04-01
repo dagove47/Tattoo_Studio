@@ -43,8 +43,10 @@ FOREIGN KEY (Cliente_ID) REFERENCES Clientes(ClienteID)
 );
 
 CREATE TABLE EVENTO_AGENDA(
-Evento_ID INT PRIMARY KEY ,
 Cliente_ID int,
+Id_Fecha INT PRIMARY KEY AUTO_INCREMENT,
+Fecha DATE  ,
+Disponibilidad INT,
 Descripcion varchar(230),
 Foreign key (Cliente_ID) references Clientes(ClienteID)
 );
@@ -59,6 +61,7 @@ CREATE TABLE Contactos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255),
     correo VARCHAR(255),
-    mensaje TEXT
+    mensaje TEXT,
+    telefono varchar2(255)
 );
 

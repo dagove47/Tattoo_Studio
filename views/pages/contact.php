@@ -26,7 +26,7 @@
                         <div class="contact-card">
                             <div class="card-body">
                                 <h2 class="card-title text-center mb-4">Contacto</h2>
-                                <form id="contactForm" method="post" action="../../controllers/contactocontroller.php">
+                                <form id="contactForm" method="post" action="../../controllers/contactcontroller.php">
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nombre:</label>
                                         <input type="text" class="form-control" id="name" name="nombre" required>
