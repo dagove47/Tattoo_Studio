@@ -27,10 +27,44 @@
         <div class="title-home">
           <h1>Nebularte</h1><br>
           <h4>Tattoo Studio</h4>
-          <a class="scroll-home mb-4" href="#about">
+          <a class="scroll-home mb-4" href="#description">
             <p class="m-0">scroll</p>
             <em class="bi bi-arrow-down fs-4"></em>
           </a>
+        </div>
+      </section>
+      <section class="description container" id="description">
+        <div class="description-half-sect">
+          <img src="https://images.pexels.com/photos/17739456/pexels-photo-17739456/free-photo-of-black-and-white-photo-of-a-tattoo-artist-tattooing-an-arm.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Tattoo artist">
+        </div>
+        <div class="description-half-sect description-text">
+          <h2 class="mb-4" style="color: #F29727;">¿Quiénes somos?</h2>
+          <p>Somos un estudio de tatuajes con sede en Belen, Heredia. 
+              Nuestro equipo de artistas apasionados tiene años de experiencia en el 
+              diseño y la creación de tatuajes únicos y personalizados.</p>
+          <p>Nos apasiona el arte del tatuaje y nos enorgullecemos de ofrecer a nuestros 
+              clientes una experiencia excepcional.</p>
+          <a class="description-link" href="#">Conoce más sobre nosotros</a>
+        </div>
+      </section>
+      <section class="homeIcons" id="homeIcons">
+        <div class="homeIcons-box">
+          <div class="homeIcons-circle">
+            <i class="bi bi-droplet"></i>
+          </div>
+          <div class="homeIcons-title mt-2"> Black & Grey</div>
+        </div>
+        <div class="homeIcons-box">
+          <div class="homeIcons-circle">
+            <i class="bi bi-stars"></i>
+          </div>
+          <div class="homeIcons-title mt-2"> Personalizados</div>
+        </div>
+        <div class="homeIcons-box">
+          <div class="homeIcons-circle">
+            <i class="bi bi-brush"></i>
+          </div>
+          <div class="homeIcons-title mt-2"> Cover-ups</div>
         </div>
       </section>
     </main>
