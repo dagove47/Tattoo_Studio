@@ -62,6 +62,6 @@ CREATE TABLE Contactos (
     nombre VARCHAR(255),
     correo VARCHAR(255),
     mensaje TEXT,
-    telefono varchar2(255)
+    telefono VARCHAR(255)
 );
 
