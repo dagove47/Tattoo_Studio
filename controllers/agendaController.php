@@ -1,27 +1,27 @@
 <?php 
 
 require_once '../models/agenda.php';
-class AgendaController
-{
 
-
-/*    public function guardarEvento()
-    {
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eventName']) && isset($_POST['eventDate'])) {
-            $eventName = $_POST['eventName'];
-            $eventDate = $_POST['eventDate'];
-
-            // Consulta para insertar el evento en la base de datos
-            $sql = "INSERT INTO Evento_Agenda (title, start) VALUES ('$eventName', '$eventDate')";
-            if ($conn->query($sql) === TRUE) {
-                echo "Evento guardado correctamente";
-            } else {
-                echo "Error al guardar el evento: " . $conn->error;
+   switch ($_GET["op"]) {
+        case 'listar_para_tabla':
+            $fecha = new Agenda();
+            $fechas = $fecha->listarFechasDb();
+            $data = array();          
+            foreach ($fechas as $reg) {
+               
+                $data[] = array(
+                    "0" => $reg->getFecha()                
+                );
             }
+
+            $resultados = array(
+                "sEcho" => 1, #informacion para datatables
+                "iTotalRecords" =>count($data), ## total de registros al datatable
+                "iTotalDisplayRecords" => count($data), ## enviamos el total de registros a visualizar
+                "aaData" => $data
+            );
+            echo json_encode($resultados);
+            break;
         }
 
-    }*/
-
-}
 ?>
