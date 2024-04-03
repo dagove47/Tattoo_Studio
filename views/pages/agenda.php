@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Encabezado y estilos -->
     <title>Contacto - Tattoo Studio</title>
@@ -13,40 +14,42 @@
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/agenda.css" />
 </head>
+
 <body>
 
-<header>
+    <header>
         <?php include '../components/navbar.php'; ?>
     </header>
 
-        
+    <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
         <div id="calendar"></div>
-
-        <div class="modal" id="addEventModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Agregar Evento</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Formulario para agregar evento -->
-                <form id="eventForm">
-                    <div class="mb-3">
-                        <label for="eventName" class="form-label">Nombre del Evento</label>
-                        <input type="text" class="form-control" id="eventName" required>
+        </div>
+        <div class="col-md-4">
+            <div class="form-container text-center">
+                <h2 class="text-center mb-4">Bookings</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="eventDate" class="form-label">Fecha del Evento</label>
-                        <input type="date" class="form-control" id="eventDate" required>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Guardar Evento</button>
+                    <div class="form-group">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" class="form-control" id="fecha" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom btn-block">Enviar</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-        
+
+
 
     <footer>
         <?php include '../components/footer.php'; ?>
@@ -61,4 +64,5 @@
 
 
 </body>
+
 </html>
