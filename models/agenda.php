@@ -2,30 +2,64 @@
 
 require_once "../Config/Conexion.php";
 
-class Agenda
+class Agenda extends Conexion
 {
-    // Consulta para obtener las fechas ocupadas
 
-    public static function fecha()
+    // Consulta para obtener las fechas ocupadas\
+    protected static $cnx;
+
+    private $fecha;
+
+    public function __construct()
+    {
+    }
+    public function getFecha()
     {
 
-        $conexion = Conexion::conectar();
-        $sql = "SELECT Fecha,Disponibilidad FROM Evento_Agenda WHERE Disponibilidad = 0";
-        $result = $conexion->query($sql);
+        return $this->fecha;
+    }
 
-        // Convertir resultados a formato JSON
-        if ($result->rowCount() > 0) {
-            $events = [];
-            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                $events[] = [
-                    'Title' => 'Disponible',
-                    'start' => $row['Fecha'],
-                ];
+    public function setFecha($fecha)
+    {
+
+        $this->fecha = $fecha;
+    }
+
+    public static function getConexion()
+    {
+        self::$cnx = Conexion::conectar();
+    }
+
+    public static function desconectar()
+    {
+        self::$cnx = null;
+    }
+
+    public function listarFechasDb()
+    {
+        $query = "SELECT Fecha FROM evento_agenda where Disponibilidad=0 ";
+        $arr = array();
+        try {
+            self::getConexion();
+            $resultado = self::$cnx->prepare($query);
+            $resultado->execute();
+            self::desconectar();
+            foreach ($resultado->fetchAll() as $encontrado) {
+                $fechaD = new Agenda();
+                $fechaD->setFecha($encontrado['Fecha']);
+                $arr[] = $fechaD;
             }
-
-            echo json_encode($events);
+            return $arr;
+        } catch (PDOException $Exception) {
+            self::desconectar();
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();;
+            return json_encode($error);
         }
     }
 }
 
+
+    
+
 ?>
+

@@ -30,6 +30,55 @@ footer {
     justify-content: space-between;
   }
 
+
+
+  .container {
+    margin-top: 30px; /* Margen superior */
+    margin-bottom: 30px; /* Margen inferior */
+}
+
+btn-custom {
+  background-color:orange;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  
+}
+
+.btn-custom:hover {
+  background-color: orange;
+  
+}
+
+.btn{
+
+  color:black;
+  background-color: white;
+  margin-top: 4%;
+}
+
+.col-md-4{
+
+padding:5%;
+padding-top: 8%;
+}
+
+
+.col-md-6{
+padding:5%;
+padding-top: 15%;
+ }
+
+
+=======
   .container {
     margin-top: 30px; /* Margen superior */
     margin-bottom: 30px; /* Margen inferior */
@@ -70,6 +119,7 @@ padding-top: 8%;
 
 
 }
+
 
 
 
