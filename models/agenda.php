@@ -4,6 +4,7 @@ require_once "../Config/Conexion.php";
 
 class Agenda extends Conexion
 {
+
     // Consulta para obtener las fechas ocupadas\
     protected static $cnx;
 
@@ -56,4 +57,9 @@ class Agenda extends Conexion
         }
     }
 }
+
+
+    
+
+?>
 

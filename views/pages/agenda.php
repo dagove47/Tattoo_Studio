@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Encabezado y estilos -->
     <title>Contacto - Tattoo Studio</title>
@@ -12,11 +13,13 @@
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/agenda.css" />
 </head>
+
 <body>
 
-<header>
+    <header>
         <?php include '../components/navbar.php'; ?>
     </header>
+
 
 
     <div class="container mt-5">
@@ -60,6 +63,8 @@
     </div>
 
 
+    
+
 
 
     <footer>
@@ -74,4 +79,5 @@
 
 
 </body>
+
 </html>
