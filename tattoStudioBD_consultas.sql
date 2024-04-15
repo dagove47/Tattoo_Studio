@@ -1,4 +1,6 @@
--- Las consultas que se van a realizar para poder montar los dashboard
+
+
+  -- Las consultas que se van a realizar para poder montar los dashboard
 
 -- 1. Clientes que más han gastado en un año
 SELECT ClienteID, Nombre, Apellido, SUM(MontoPagado) AS GastoTotal
