@@ -9,7 +9,7 @@ class ContactoController
             // Obtener los datos del formulario
             $nombre = $_POST["nombre"];
             $correo = $_POST["correo"];
-            $telefono = $_POST["telefono"]; // Se añade el campo de teléfono
+            $telefono = $_POST["telefono"]; 
             $mensaje = $_POST["mensaje"];
             
             // Llamar al modelo para guardar el contacto

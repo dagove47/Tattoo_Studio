@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="../assets/css/contact.css" />
     <style>
         .content-container {
-            margin-top: 50px; /* Ajusta el margen superior según sea necesario */
-            margin-bottom: 50px; /* Ajusta el margen inferior según sea necesario */
+            margin-top: 50px; 
+            margin-bottom: 50px; 
         }
     </style>
 </head>
