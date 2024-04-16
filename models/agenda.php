@@ -24,7 +24,6 @@ class Agenda extends Conexion
 
         $this->fecha = $fecha;
     }
-
     public static function getConexion()
     {
         self::$cnx = Conexion::conectar();
@@ -35,9 +34,10 @@ class Agenda extends Conexion
         self::$cnx = null;
     }
 
-    public function listarFechasDb()
+
+public function listarFechasDb()
     {
-        $query = "SELECT Fecha FROM evento_agenda where Disponibilidad=0 ";
+        $query = "SELECT Fecha FROM evento_agenda WHERE Disponibilidad = 0";
         $arr = array();
         try {
             self::getConexion();
@@ -45,21 +45,19 @@ class Agenda extends Conexion
             $resultado->execute();
             self::desconectar();
             foreach ($resultado->fetchAll() as $encontrado) {
-                $fechaD = new Agenda();
-                $fechaD->setFecha($encontrado['Fecha']);
-                $arr[] = $fechaD;
+                $dato = new Agenda();
+                $dato->setFecha($encontrado['Fecha']);               
+                $arr[] = $dato;
             }
             return $arr;
         } catch (PDOException $Exception) {
             self::desconectar();
-            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();;
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            ;
             return json_encode($error);
         }
     }
+
+
 }
-
-
-    
-
-?>
 

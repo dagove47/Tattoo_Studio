@@ -28,56 +28,55 @@
                 <h3 class="text-center card-title">Fechas Disponibles</h3>
                 <table id="tbllistado" class="table table-striped table-bordered table-hover">
                     <thead>
-                       <tr>
-                        <th>Fecha</th>
-                       </tr>  
-                        
+                        <th>Fecha Disponibilidad</th>
+
                     </thead>
                     <tbody>
-
                     </tbody>
+                    <tfooter>
+                        <th>Fecha Disponibilidad</th>
+                    </tfooter>
                 </table>
+                <ul>
+
+                </ul>
             </div>
             <div class="col-md-4">
                 <div class="form-container text-center">
                     <h2 class="text-center mb-4">Bookings</h2>
 
-                    <form id="book" method="POST">
-                        <div class="form-group">
-                            <label for="nombre"></label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
-                        </div>
+                    <form id="contactForm" method="post" action="../../controllers/agendaController.php?op='insertar'">  
+                         <div class="form-group">
+                            <label for="email"></label>
+                            <input type="email" name="email" class="form-control" id="email" required  placeholder="email">
+                        </div>                  
                         <div class="form-group">
                             <label for="fecha"></label>
-                            <input type="date" class="form-control" id="fecha" required>
+                            <input type="date" name="fecha" class="form-control" id="fecha" required>
                         </div>
                         <div class="form-group">
                             <label for="descripcion"></label>
-                            <textarea type="descripcion" class="form-control" id="descripcion" placeholder="Descripcion del tatuaje" required></textarea>
+                            <textarea type="descripcion" name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion del tatuaje" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-custom btn-block">Enviar</button>
-                    </form>
+                        <button type="submit" class="btn btn-orange">Enviar</button>
+
+                    </form>               
                 </div>
             </div>
         </div>
     </div>
 
 
-    
-
-
-
     <footer>
         <?php include '../components/footer.php'; ?>
     </footer>
 
-    <script src="../plugins/jquery/jquery.min.js"></script>
-    <script src="../plugins/DataTables/datatables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../plugins//DataTables/datatables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
     <script src="../assets/js/agenda.js"></script>
-
-
-
 </body>
 
 </html>
