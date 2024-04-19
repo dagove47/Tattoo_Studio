@@ -13,26 +13,29 @@ class CotizacionController
             $estilo = $_POST["estilo"];
             $descripcion = $_POST["descripcion"];
 
-            // Verificar si se recibió el archivo de imagen
+            // Verificar si se recibió el nombre de archivo de la imagen
             if (isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] == UPLOAD_ERR_OK) {
-                $allowedExtensions = array("jpg", "jpeg", "png", "gif");
-                $fileExtension = pathinfo($_FILES["imagen"]["name"], PATHINFO_EXTENSION);
+                $nombreArchivo = $_FILES["imagen"]["name"];
+                
+                // Ruta donde se almacenará la imagen en el servidor
+                $rutaImagen = "../views/assets/images/" . $nombreArchivo;
 
-                if (!in_array($fileExtension, $allowedExtensions)) {
-                    echo "El archivo no es una imagen válida.";
-                    return false;
-                }
+                // Obtener la ruta temporal del archivo
+                $rutaTemporal = $_FILES["imagen"]["tmp_name"];
 
-                // Leer el contenido del archivo de imagen
-                $imagen = file_get_contents($_FILES["imagen"]["tmp_name"]);
-
-                // Llamar al modelo para guardar la cotización con la imagen
-                if (Cotizacion::guardarCotizacionConImagen($nombre, $correo, $telefono, $estilo, $descripcion, $imagen)) {
-                    // Mostrar un mensaje de éxito y redirigir a la página de cotización
-                    echo "<script>alert('¡Cotización enviada correctamente con imagen!'); window.location.href='http://localhost/Tattoo_Studio-main1/Tattoo_Studio-main/views/pages/cotizacion.php';</script>";
+                // Verificar si la imagen ya existe en la carpeta de destino
+                if (file_exists($rutaImagen)) {
+                    echo "La imagen ya existe en la carpeta de destino.";
                 } else {
-                    // Mostrar un mensaje de error
-                    echo "Hubo un error al enviar la cotización con imagen. Por favor, inténtalo de nuevo.";
+                    // Mover la imagen a la carpeta de destino (opcional)
+                    // move_uploaded_file($rutaTemporal, $rutaImagen);
+
+                    // Guardar la cotización con la ruta local de la imagen
+                    if (Cotizacion::guardarCotizacionConRutaImagen($nombre, $correo, $telefono, $estilo, $descripcion, $rutaImagen)) {
+                        echo "<script>alert('¡Cotización enviada correctamente con imagen!'); window.location.href='http://localhost/Tattoo_Studio-main1/Tattoo_Studio-main/views/pages/cotizacion.php';</script>";
+                    } else {
+                        echo "Hubo un error al guardar la cotización con imagen.";
+                    }
                 }
             } else {
                 // No se recibió ninguna imagen o ocurrió un error al subirla.
@@ -46,3 +49,4 @@ class CotizacionController
 $cotizacionController = new CotizacionController();
 $cotizacionController->procesarEnvio();
 ?>
+
