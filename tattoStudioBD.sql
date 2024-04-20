@@ -43,12 +43,12 @@ FOREIGN KEY (Cliente_ID) REFERENCES Clientes(ClienteID)
 );
 
 CREATE TABLE EVENTO_AGENDA(
-Cliente_ID int,
 Id_Fecha INT PRIMARY KEY AUTO_INCREMENT,
 Fecha DATE  ,
 Disponibilidad INT,
 Descripcion varchar(230),
-Foreign key (Cliente_ID) references Clientes(ClienteID)
+correo varchar(230),
+telefono varchar(230)
 );
 
 CREATE TABLE ADMINISTRADORES(
@@ -65,3 +65,13 @@ CREATE TABLE Contactos (
     telefono VARCHAR(255)
 );
 
+/*INSERTS EVENTOS_FECHA*/
+INSERT INTO `evento_agenda`(`Fecha`, `Disponibilidad`, `Descripcion`, `correo`, `telefono`) VALUES ('2024-01-02',0,null,null,null);
+
+INSERT INTO `evento_agenda`(`Fecha`, `Disponibilidad`, `Descripcion`, `correo`, `telefono`) VALUES ('2024-01-03',0,null,null,null);
+
+INSERT INTO `evento_agenda`(`Fecha`, `Disponibilidad`, `Descripcion`, `correo`, `telefono`) VALUES ('2024-01-04',0,null,null,null);
+
+INSERT INTO `evento_agenda`(`Fecha`, `Disponibilidad`, `Descripcion`, `correo`, `telefono`) VALUES ('2024-01-05',0,null,null,null);
+
+INSERT INTO `evento_agenda`(`Fecha`, `Disponibilidad`, `Descripcion`, `correo`, `telefono`) VALUES ('2024-01-06',0,null,null,null);

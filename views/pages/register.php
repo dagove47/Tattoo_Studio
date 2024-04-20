@@ -14,6 +14,18 @@
 </head>
 
 <body class="signup_body">
+
+<header>
+        <div class="main_buttons">
+        <div class="main_btn"><a href="../index.php">Inicio</a></div>
+            <div class="main_btn"><a href="./register.php">Registrarse</a></div>
+            <div class="main_btn"><a href="./login.php">Iniciar sesión</a></div> 
+            <div class="main_btn"><a href="./galery.php">Galeria </a></div> 
+            <div class="main_btn"><a href="./contact.php">Contacto</a></div> 
+
+        </div>
+    </header>
+
     <section class="access">
         <form method="POST" action="../../controllers/registerController.php">
             <input class="accessInput" type="text" name="name" placeholder="Nombre" required>

@@ -21,8 +21,12 @@
 <body>
     <header>
         <div class="main_buttons">
-            <div class="main_btn"><a href="/signup">Registrarse</a></div>
-            <div class="main_btn"><a href="/login">Iniciar sesión</a></div>
+        <div class="main_btn"><a href="pages/index.php">Inicio</a></div>
+            <div class="main_btn"><a href="pages/register.php">Registrarse</a></div>
+            <div class="main_btn"><a href="pages/login.php">Iniciar sesión</a></div> 
+            <div class="main_btn"><a href="pages/galery.php">Galeria </a></div> 
+            <div class="main_btn"><a href="pages/contact.php">Contacto</a></div> 
+
         </div>
     </header>
     <main>

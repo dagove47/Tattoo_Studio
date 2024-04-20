@@ -30,8 +30,11 @@
                     <thead>
                         <th>Fecha Disponibilidad</th>
 
+
+
                     </thead>
                     <tbody>
+
                     </tbody>
                     <tfooter>
                         <th>Fecha Disponibilidad</th>
@@ -45,26 +48,40 @@
                 <div class="form-container text-center">
                     <h2 class="text-center mb-4">Bookings</h2>
 
-                    <form id="contactForm" method="post" action="../../controllers/agendaController.php?op='insertar'">  
-                         <div class="form-group">
-                            <label for="email"></label>
-                            <input type="email" name="email" class="form-control" id="email" required  placeholder="email">
-                        </div>                  
+
+
+                    <form id="contactForm" method="post" action="../../controllers/reservaController.php">
                         <div class="form-group">
                             <label for="fecha"></label>
-                            <input type="date" name="fecha" class="form-control" id="fecha" required>
+                            <input type="date" id="fecha" class="form-control"name="fecha" value="2024-04-01" min="2024-01-01" max="2024-12-31">
+
                         </div>
+
+
                         <div class="form-group">
                             <label for="descripcion"></label>
                             <textarea type="descripcion" name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion del tatuaje" required></textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="email"></label>
+                            <input type="email" name="email" class="form-control" id="email" required placeholder="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono"></label>
+                            <input type="text" name="telefono" class="form-control" id="telefono" placeholder="Numero de Telefono" required>
+                        </div>
                         <button type="submit" class="btn btn-orange">Enviar</button>
 
-                    </form>               
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
 
 
     <footer>
@@ -77,6 +94,9 @@
     <script src="../plugins//DataTables/datatables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
     <script src="../assets/js/agenda.js"></script>
+
+
+
 </body>
 
 </html>
