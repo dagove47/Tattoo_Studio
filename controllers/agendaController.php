@@ -1,4 +1,5 @@
 
+
 <?php
 require_once '../models/agenda.php';
 
@@ -16,7 +17,6 @@ require_once '../models/agenda.php';
         echo json_encode($data);
         exit();
 }*/
-
 
 switch ($_GET["op"]) {
     case 'listar_para_tabla':
@@ -43,6 +43,9 @@ switch ($_GET["op"]) {
         break;
        
 }
+
+  
+  
 
 
 

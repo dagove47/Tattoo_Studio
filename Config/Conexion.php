@@ -31,4 +31,4 @@ try {
 } catch (PDOException $ex) {
     echo "Error al conectar a la base de datos: " . $ex->getMessage();
 }
-?>
+

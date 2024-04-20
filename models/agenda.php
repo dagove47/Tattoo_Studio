@@ -1,38 +1,35 @@
-<?php
 
+<?php
 require_once "../Config/Conexion.php";
 
 class Agenda extends Conexion
 {
-
-    // Consulta para obtener las fechas ocupadas\
+    private $fecha;
+    
     protected static $cnx;
 
-    private $fecha;
-
-    public function __construct()
-    {
-    }
     public function getFecha()
     {
-
         return $this->fecha;
     }
 
     public function setFecha($fecha)
     {
-
         $this->fecha = $fecha;
     }
+
     public static function getConexion()
     {
+
+    public static function getConexion(){
+
         self::$cnx = Conexion::conectar();
     }
 
-    public static function desconectar()
-    {
+    public static function desconectar(){
         self::$cnx = null;
     }
+
 
 
 public function listarFechasDb()
@@ -60,4 +57,19 @@ public function listarFechasDb()
 
 
 }
+
+    
+
+    
+
+
+
+}
+
+
+
+    
+
+?>
+
 
