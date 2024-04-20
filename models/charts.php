@@ -6,9 +6,9 @@ class Charts {
         try {
             $conexion = Conexion::conectar();
             $sql = "SELECT ClienteID, Nombre, Apellido, SUM(MontoPagado) AS GastoTotal
-            FROM Transacciones
-            JOIN Clientes ON Transacciones.ClienteID = Clientes.ClienteID
-            WHERE YEAR(FechaTransaccion) = 2024
+            FROM transacciones
+            JOIN clientes ON transacciones.ClienteID = Clientes.ClienteID
+            WHERE DATE(FechaTransaccion) = 2024
             GROUP BY ClienteID
             ORDER BY GastoTotal DESC
             LIMIT 5;";
