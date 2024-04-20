@@ -16,6 +16,11 @@
 
 <body>
 
+    <?php
+
+
+    ?>
+
     <header>
         <?php include '../components/navbar.php'; ?>
     </header>
@@ -26,18 +31,23 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <h3 class="text-center card-title">Fechas Disponibles</h3>
-                <table id="tbllistado" class="table table-striped table-bordered table-hover">
+                <table>
                     <thead>
-                       <tr>
-                        <th>Fecha</th>
-                       </tr>  
-                        
+                        <tr>
+                            <th>Fecha</th>
+                        </tr>
                     </thead>
                     <tbody>
-
+                        
+                        <?php
+                        // Iterar sobre los datos pasados desde el controlador y mostrarlos en la vista
+                        foreach ($datos as $dato) : ?>
+                            <p><?php echo $dato; ?></p>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
+
             <div class="col-md-4">
                 <div class="form-container text-center">
                     <h2 class="text-center mb-4">Bookings</h2>
@@ -63,7 +73,7 @@
     </div>
 
 
-    
+
 
 
 
