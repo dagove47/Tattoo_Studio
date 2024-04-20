@@ -1,45 +1,51 @@
+
+
 <?php
+require_once '../models/agenda.php';
 
-class AgendaController {
-    /*public function mostrarFechas() {
-        require_once '../models/Agenda.php';
-        
-        // Crear una instancia del modelo Agenda
-        $agendaModel = new Agenda();
-        
-        // Obtener las fechas desde el modelo
-        $fechas = $agendaModel->listarFechasDb();
+/*switch ($_GET["op"]) {
+    case 'listar_para_tabla':
+        $fecha = new Agenda();
+        $fechas = $fecha->listarFechasDb();
+        $data = array();       
 
-        // Iniciar o reanudar la sesión
-        session_start();
-        
-        // Guardar las fechas en una variable de sesión
-        $_SESSION['fechas'] = $fechas;
+        foreach ($fechas as $reg) {
+            $data[] = $reg->getFecha(); // Agregar cada fecha al array
+        }
 
-        // Incluir la vista
-        require '../views/pages/agenda.php';
-    
-    }*/
+        // Construye el resultado como un simple array de datos
+        echo json_encode($data);
+        exit();
+}*/
+
+switch ($_GET["op"]) {
+    case 'listar_para_tabla':
+        $fecha = new Agenda();
+        $fechas = $fecha->listarFechasDb();
+        $data = array();       
+
+        foreach ($fechas as $reg) {
+            $data[] = array(
+                $reg->getFecha() // Agregar cada fecha directamente al array
+            );
+        }
+
+        // Construye el resultado como un simple array de datos
+        $resultados = array(
+            "sEcho" => 1, // Información para datatables
+            "iTotalRecords" => count($data), // Total de registros al datatable
+            "iTotalDisplayRecords" => count($data), // Total de registros a visualizar
+            "aaData" => $data
+        );
+
+        // Envía el JSON con los resultados
+        echo json_encode($resultados);
+        break;
+       
+}
 
   
-    
+  
 
 
-    public function mostrarVista() {
-        require_once '../models/agenda.php';
-        // Crear una instancia del modelo
-        $modelo = new Agenda();
-        
-        // Obtener los datos del modelo
-        $datos = $modelo->obtenerDatos();
-        
-        // Llamar a la vista y pasar los datos
-        require '.../../views/pages/agenda.php';
-    }
 
-}
-// Crear una instancia del controlador y llamar al método para mostrar la vista
-$controlador = new AgendaController();
-$controlador->mostrarVista();
-
-?>
