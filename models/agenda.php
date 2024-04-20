@@ -20,9 +20,6 @@ class Agenda extends Conexion
 
     public static function getConexion()
     {
-
-    public static function getConexion(){
-
         self::$cnx = Conexion::conectar();
     }
 
@@ -58,18 +55,6 @@ public function listarFechasDb()
 
 }
 
-    
 
-    
-
-
-
-}
-
-
-
-    
-
-?>
 
 
