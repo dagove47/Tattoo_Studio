@@ -218,6 +218,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </li>
                 
               </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./agendaAdmin.php" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Reportes</p>
+                  </a>
+                </li>
+                
+              </ul>
             </li>
             <!--Menu de busqueda de datos -->
         </nav>
