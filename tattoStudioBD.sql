@@ -65,12 +65,12 @@ CREATE TABLE Contactos (
     telefono VARCHAR(255)
 );
 
-CREATE TABLE Galeria(
-
-ID INT AUTO_INCREMENT,
-Nombre VARCHAR(250),
-ruta_imagen VARCHAR(250)
+CREATE TABLE Galeria (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(250),
+    ruta_image VARCHAR(250)
 );
+
 
 /*INSERTS EVENTOS_FECHA*/
 INSERT INTO `evento_agenda`(`Fecha`, `Disponibilidad`, `Descripcion`, `correo`, `telefono`) VALUES ('2024-01-02',0,null,null,null);
