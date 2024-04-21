@@ -21,33 +21,12 @@
 </header>
 
 <body>
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div id="chart" style="height: 400px; width: 400px;"></div>
-            </div>
-            <div class="col-md-4">
-                <div id="chart2" style="height: 400px; width: 400px;"></div>
-            </div>
-            <div class="col-md-4">
-                <div id="chart3" style="height: 400px; width: 400px;"></div>
-            </div>
-        </div>
+</body>
 
-    </div>
-    <br />
-    <br />
-    <div class="container">
-        <div class="25
-</script>
-
-<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
+<footer>
+    <?php 
+    include '../components/footer.php';
+    ?>
+</footer>
 
 </html>

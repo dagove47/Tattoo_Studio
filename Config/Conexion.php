@@ -3,10 +3,6 @@ require_once "global.php";
 
 class Conexion
 {
-    function __construct()
-    {
-        # code...
-    }
     public static function conectar(){
         //conexion mysql
         try {
