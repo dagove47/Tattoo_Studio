@@ -49,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="navbar-search-block">
             <form class="form-inline">
               <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" pflaceholder="Search" aria-label="Search">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                 <div class="input-group-append">
                   <button class="btn btn-navbar" type="submit">
                     <i class="fas fa-search"></i>
@@ -202,7 +202,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!--Menu de Agenda-->
             <li class="nav-item menu-open">
-              <a href="./dashboard.php" class="nav-link active">
+              <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Manejo de Agenda
