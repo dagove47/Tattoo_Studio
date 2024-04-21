@@ -225,6 +225,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </a>
                 </li>
               </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Cotizacion</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./galeriaAdmin.php" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Galeria</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             <!--Menu de busqueda de datos -->
         </nav>

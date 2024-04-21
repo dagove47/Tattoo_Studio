@@ -22,7 +22,7 @@ class AgendaAdminController
             }
         }
     }
-}
+} 
 
 $agendaAdminController = new AgendaAdminController();
 
