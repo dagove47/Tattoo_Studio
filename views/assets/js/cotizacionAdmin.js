@@ -1,83 +1,43 @@
+// Función para cargar el listado en la tabla
+function cargarListado(data) {
+    var tbody = $("#tbllistado tbody");
+    tbody.empty(); // Limpiar contenido previo
 
-var tabla;
+    data.forEach(function(item) {
+        var row = $("<tr></tr>");
+        row.append("<td>" + item.id + "</td>"); // Agregar la columna de ID
+        row.append("<td>" + item.nombre + "</td>");
+        row.append("<td>" + item.telefono + "</td>");
+        row.append("<td>" + item.correo + "</td>");
+        row.append("<td>" + item.estilo + "</td>");
+        row.append("<td>" + item.descripcion + "</td>");
 
-function listarCotizaciones() {
-    
-    if (!tabla) {
-        tabla = $("#tbllistado").DataTable({
-            processing: true, 
-            serverSide: true, 
-            dom: "Bfrtip", 
-            buttons: ["copyHtml5", "excelHtml5", "csvHtml5", "pdf"],
-            ajax: {
-                url: "../../controllers/cotizacionAdmincontoller.php?op=listar_para_tabla",
-                type: "GET",
-                dataType: "json",
-                success: function(response) {
-                    console.log("Datos recibidos correctamente:", response);
-                },
-                error: function(xhr, status, error) {
-                    console.log("Error en la solicitud AJAX:", error);
-                },
-            },
-            columns: [
-                { title: "ID" }, 
-                { title: "Nombre" },
-                { title: "Teléfono" },
-                { title: "Correo" },
-                { title: "Estilo" },
-                { title: "Descripción" },
-                {
-                    title: "Imagen",
-                    render: function(data, type, row) {
-                        return '<img src="' + data + '" style="max-width: 100px; max-height: 100px;">';
-                    }
-                },
-                {
-                    title: "Acciones",
-                    render: function(data, type, row) {
-                        return '<button class="btn btn-danger btn-sm btnEliminar" data-id="' + row[0] + '">Eliminar</button>';
-                    }
-                }
-            ],
-            pageLength: 5,
-        });
+        // Crear elemento de imagen y establecer la ruta de la imagen como src
+        var img = $("<img>").attr("src", item.rutaImagen).css({ "max-width": "100px", "max-height": "100px" });
+        var imgCell = $("<td></td>").append(img);
+        row.append(imgCell);
 
-      
-        $("#tbllistado").on("click", ".btnEliminar", function() {
-            var id = $(this).data("id");
-            if (confirm("¿Estás seguro de que quieres eliminar este registro?")) {
-                eliminarCotizacion(id);
-            }
-        });
-    } else {
-        // Si la tabla ya está inicializada, solo recargar los datos
-        tabla.ajax.reload(null, false); 
-    }
-}
-
-
-function eliminarCotizacion(id) {
-    $.ajax({
-        url: "../../controllers/cotizacionAdmincontoller.php?op=eliminar",
-        type: "POST",
-        data: { id: id },
-        dataType: "json",
-        success: function(response) {
-            if (response.success) {
-               
-                tabla.ajax.reload(null, false);
-                alert("Cotización eliminada correctamente.");
-            } else {
-                alert("Error al eliminar la cotización.");
-            }
-        },
-        error: function(xhr, status, error) {
-            console.log("Error en la solicitud AJAX:", error);
-        }
+        tbody.append(row);
     });
 }
 
+// Función para cargar los datos usando AJAX
+function cargarDatos() {
+    $.ajax({
+        url: "../../controllers/cotizacionAdmincontoller.php?op=listar_para_tabla",
+        type: "GET",
+        dataType: "json",
+        success: function(response) {
+            console.log("Datos recibidos correctamente:", response);
+            cargarListado(response);
+        },
+        error: function(xhr, status, error) {
+            console.log("Error en la solicitud AJAX:", error);
+        },
+    });
+}
 
-listarCotizaciones();
-
+// Llamar a la función para cargar los datos al cargar la página
+$(document).ready(function() {
+    cargarDatos();
+});
