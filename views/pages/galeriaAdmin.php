@@ -16,7 +16,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
-    <link rel="stylesheet" href="../assets/css/agendaAdmin.css">
+    
 
 
 </head>
@@ -167,7 +167,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">Nabularte</span>
             </a>
 
             <!-- Sidebar -->
@@ -202,7 +202,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <!--Menu de Agenda-->
                         <li class="nav-item menu-open">
-                            <a href="./dashboard.php" class="nav-link active">
+                            <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Manejo de Agenda
@@ -270,84 +270,54 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- /.content-header -->
 
             <!-- Main content -->
-            <div class="content ">
-                <div class="container-fluid text-center"">
-          <div class=" row">
 
-                    <!--<table id="tbllistado" class="table table-striped table-bordered table-hover">
-                        <thead>
-                            <th>Fecha Disponibilidad</th>
-                            <th>Disponibilidad</th>
-                            <th>Descripcion</th>
-                            <th>Email</th>
-                            <th>Telefono</th>
-                            <th>Acciones</th>
-                        </thead>
-                        <tbody>
+            <div class="container mt-5">
+                <h1 class="text-center">Ingreso de Imágenes para Galería</h1>
 
-                        </tbody>
-                        <tfooter>
-                            <th>Fecha Disponibilidad</th>
-                            <th>Disponibilidad</th>
-                            <th>Descripcion</th>
-                            <th>Email</th>
-                            <th>Telefono</th>
-                            <th>Acciones</th>
-                        </tfooter>
-                    </table>-->
-
-                </div>
-
-                <div id="form1" class="row ">
-
-                    <form id="form" method="POST" action="../../controllers/galeriaAdminController.php" enctype="multipart/form-data">
-
-                        <h1>Ingresar nueva Imagen</h1>
-
-                        <div class="form-group">
-
-                            <label for="nombre"></label>
-                            <input type="text" id="nombre" class="form-control" name="nombre" placeholder="Nombre de la Imagen" REQUIRED>
-                            
-                            <label for="image" class="form-label"> Imagen a ingresar:</label>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card text-center mx-auto">
+                            <div class="card-body">
+                                <h1 class="card-title mb-4">Ingresar nueva Imagen</h1>
+                                <form id="form" method="POST" action="../../controllers/galeriaAdminController.php" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <label for="nombre" class="form-label">Nombre de la Imagen</label>
+                                        <input type="text" id="nombre" class="form-control" name="nombre" placeholder="Nombre de la Imagen" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="image" class="form-label">Imagen a ingresar</label>
                                         <input type="file" class="form-control" id="image" name="imagen" accept="image/jpeg, image/png, image/gif" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                </form>
+                            </div>
                         </div>
-
-
-                        <button type="submit" class="btn btn-orange">Enviar</button>
-
-
-
-                    </form>
-
-
+                    </div>
                 </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
         </div>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
+        <!-- /.content-wrapper -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-        <div class="p-3">
-            <h5>Title</h5>
-            <p>Sidebar content</p>
-        </div>
-    </aside>
-    <!-- /.control-sidebar -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
 
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="float-right d-none d-sm-inline">
-            Anything you want
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-    </footer>
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- To the right -->
+            <div class="float-right d-none d-sm-inline">
+                Anything you want
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        </footer>
     </div>
     <!-- ./wrapper -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -388,8 +358,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </script>
 
 
-    
-   
+
+
 
 
     <script src="../plugins/bootstrap/js/bootstrap.bundle.js"></script>

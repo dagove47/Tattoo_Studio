@@ -15,7 +15,7 @@
     <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap4.min.css">
 
-   
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -99,17 +99,42 @@
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">Nabularte</span>
             </a>
 
             <!-- Sidebar -->
             <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="../assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Alexander Pierce</a>
+                    </div>
+                </div>
+
+                <!-- SidebarSearch Form -->
+                <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
                         <!--Menu de Agenda-->
                         <li class="nav-item menu-open">
-                            <a href="./dashboard.php" class="nav-link active">
+                            <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Manejo de Agenda
@@ -123,22 +148,33 @@
                                         <p>Agenda</p>
                                     </a>
                                 </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./graficosAdmin.php" class="nav-link">
+                                    <a href="./graficosAdmin.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Graficos</p>
                                     </a>
                                 </li>
+                            </ul>
+                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./cotizacionAdmin.php" class="nav-link">
+                                    <a href="./cotizacionAdmin.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Cotizacion</p>
                                     </a>
                                 </li>
                             </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="./galeriaAdmin.php" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Galeria</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <!--Menu de busqueda de datos -->
-                    </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
@@ -166,65 +202,65 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-          <div class="card">
-    <div class="card-header">
-        <h3 class="card-title">Cotizaciones del Cliente</h3>
-    </div>
-    <!-- /.card-header -->
-    <div class="card-body">
-        <table id="tbllistado" class="table table-striped table-bordered table-hover">
-            <thead>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Correo</th>
-                <th>Telefono</th>
-                <th>Descripcion</th>
-                <th>Estilo</th>
-                <th>Imagen</th>
-            </thead>
-            <tbody>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Cotizaciones del Cliente</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="tbllistado" class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Telefono</th>
+                            <th>Descripcion</th>
+                            <th>Estilo</th>
+                            <th>Imagen</th>
+                        </thead>
+                        <tbody>
 
-            </tbody>
-        </table>
-    </div>
-            <!-- /.content -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Control sidebar content goes here -->
+                <div class="p-3">
+                    <h5>Title</h5>
+                    <p>Sidebar content</p>
+                </div>
+            </aside>
+            <!-- /.control-sidebar -->
+
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <!-- To the right -->
+                <div class="float-right d-none d-sm-inline">
+                    Anything you want
+                </div>
+                <!-- Default to the left -->
+                <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+            </footer>
         </div>
-        <!-- /.content-wrapper -->
+        <!-- ./wrapper -->
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-            <div class="p-3">
-                <h5>Title</h5>
-                <p>Sidebar content</p>
-            </div>
-        </aside>
-        <!-- /.control-sidebar -->
-
-        <!-- Main Footer -->
-        <footer class="main-footer">
-            <!-- To the right -->
-            <div class="float-right d-none d-sm-inline">
-                Anything you want
-            </div>
-            <!-- Default to the left -->
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-        </footer>
-    </div>
-    <!-- ./wrapper -->
-
-    <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE -->
-    <script src="../assets/js/adminlte.min.js"></script>
-    <!-- DataTables -->
-    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="../assets/js/cotizacionAdmin.js"></script>
+        <!-- REQUIRED SCRIPTS -->
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE -->
+        <script src="../assets/js/adminlte.min.js"></script>
+        <!-- DataTables -->
+        <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
+        <!-- Custom JavaScript -->
+        <script src="../assets/js/cotizacionAdmin.js"></script>
 </body>
 
 </html>

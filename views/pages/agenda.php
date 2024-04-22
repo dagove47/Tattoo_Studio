@@ -50,7 +50,7 @@
 
 
 
-                    <form id="contactForm" method="post" action="../../controllers/reservaController.php">
+                    <form id="form" method="post" action="../../controllers/reservaController.php">
                         <div class="form-group">
                             <label for="fecha"></label>
                             <input type="date" id="fecha" class="form-control"name="fecha" value="2024-04-01" min="2024-01-01" max="2024-12-31">
@@ -93,8 +93,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../plugins//DataTables/datatables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../assets/js/agenda.js"></script>
+    
+    
+    <script>
+        $(document).ready(function() {
+            $('#form').submit(function(e) {
+                e.preventDefault(); // Evitar el envío del formulario predeterminado
 
+                // Enviar el formulario mediante AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: '../../controllers/reservaController.php',
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(response) {
+                        if (response.trim() === 'success') {
+                            // Mostrar SweetAlert de éxito si la cotización se guardó correctamente
+                            Swal.fire('Reservacion guardada correctamente!', '', 'success').then(function() {
+                                // Restablecer el formulario después de cerrar el SweetAlert
+                                $('#form')[0].reset();
+                            });
+                        } else {
+                            // Mostrar SweetAlert de error si hubo un problema al guardar la cotización
+                            Swal.fire('¡Fecha no disponible!', '', 'error');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 
 
 </body>

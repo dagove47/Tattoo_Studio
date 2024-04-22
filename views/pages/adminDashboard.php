@@ -167,7 +167,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Brand Logo -->
       <a href="index3.html" class="brand-link">
         <img src="../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">Nabularte</span>
       </a>
 
       <!-- Sidebar -->
@@ -275,8 +275,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row">
 
                 <h1 class="text-center">Bienvenido Administrador!</h1>
-                <img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="500px" height="500px">
-             
+                <img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded shadow" alt="Imagen chiva">             
 
           </div>
           <!-- /.row -->

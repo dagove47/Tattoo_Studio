@@ -15,11 +15,10 @@ class ReservaController
             // Llamar al modelo para guardar el contacto
             if(Reserva::guardarReserva($fecha, $descripcion, $email, $telefono)){
                 // Mostrar un mensaje de éxito y redirigir a la página de contacto
-                echo "<script>alert('¡Mensaje enviado correctamente!'); window.location.href='http://localhost/Tattoo_Studio/views/pages/agenda.php';</script>";
+                echo "success";
             } else {
                 // Mostrar un mensaje de error
-                echo "<script>alert('La fecha seleccionada no está disponible para hacer la reserva. Por favor, elige otra fecha.'); window.location.href='http://localhost/Tattoo_Studio/views/pages/agenda.php'</script>";
-
+                echo "error";
             }
         }
     }

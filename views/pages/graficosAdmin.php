@@ -173,7 +173,7 @@
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">Nabularte</span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">
@@ -204,30 +204,46 @@
                with font-awesome or any other icon font library -->
                         <!--Menu de Agenda-->
                         <li class="nav-item menu-open">
-                            <a href="./dashboard.php" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Manejo de Agenda
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="./agendaAdmin.php" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Agenda</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="./graficosAdmin.php" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Graficos</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Manejo de Agenda
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./agendaAdmin.php" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Agenda</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./graficosAdmin.php" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Graficos</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./cotizacionAdmin.php" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Cotizacion</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./galeriaAdmin.php" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Galeria</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
                         <!--Menu de busqueda de datos -->
                 </nav>
                 <!-- /.sidebar-menu -->
