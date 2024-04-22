@@ -18,7 +18,7 @@
             <a class="nav-link px-3" href="#work">Precio</a>
             </li>
             <li class="nav-item d-flex justify-content-center">
-            <a class="nav-link px-3" href="#contact">Contacto</a>
+            <a class="nav-link px-3" href="./contact.php">Contacto</a>
             </li>
         </ul>
         </div>
