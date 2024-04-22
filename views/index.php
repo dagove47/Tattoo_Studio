@@ -20,14 +20,7 @@
 </head>
 <body>
     <header>
-        <div class="main_buttons">
-        <div class="main_btn"><a href="pages/index.php">Inicio</a></div>
-            <div class="main_btn"><a href="pages/register.php">Registrarse</a></div>
-            <div class="main_btn"><a href="pages/login.php">Iniciar sesión</a></div> 
-            <div class="main_btn"><a href="pages/galery.php">Galeria </a></div> 
-            <div class="main_btn"><a href="pages/contact.php">Contacto</a></div> 
-
-        </div>
+        <?php include './components/navbar.php'; ?>
     </header>
     <main>
         <section class="main">

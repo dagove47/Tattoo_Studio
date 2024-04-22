@@ -5,7 +5,7 @@
           <a href="#" class="link-1">Inicio</a>
           <a href="#">Nosotros</a>
           <a href="#">Precio</a>
-          <a href="#">Contacto</a>
+          <a href="./contact.php">Contacto</a>
         </p>
         <p class="footer-company-name">&copy; 2024 <span style="color: #F29727;">Nebularte</span> Tattoo</p>
       </div>

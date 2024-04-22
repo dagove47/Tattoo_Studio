@@ -35,26 +35,28 @@ CREATE TABLE Transacciones (
 );
 
 CREATE TABLE Cotizaciones (
-Cotizacion_ID INT PRIMARY KEY,
-Cliente_ID INT,
-Diseño VARCHAR(250),
-DETALLE_COTIZACION VARCHAR(250),
-FOREIGN KEY (Cliente_ID) REFERENCES Clientes(ClienteID)
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(250),
+    Correo VARCHAR(250),
+    Telefono VARCHAR(20),
+    Estilo VARCHAR(250),
+    Descripcion text,
+    ruta_imagen VARCHAR(250)
 );
 
 CREATE TABLE EVENTO_AGENDA(
-Id_Fecha INT PRIMARY KEY AUTO_INCREMENT,
-Fecha DATE  ,
-Disponibilidad INT,
-Descripcion varchar(230),
-correo varchar(230),
-telefono varchar(230)
+    Id_Fecha INT PRIMARY KEY AUTO_INCREMENT,
+    Fecha DATE  ,
+    Disponibilidad INT,
+    Descripcion varchar(230),
+    correo varchar(230),
+    telefono varchar(230)
 );
 
 CREATE TABLE ADMINISTRADORES(
-AdminID INT PRIMARY KEY,
-Nombre_Usuario Varchar(15),
-Contra varchar(10)
+    AdminID INT PRIMARY KEY,
+    CorreoElectronico Varchar(250),
+    Contraseña varchar(250)
 );
 
 CREATE TABLE Contactos (
@@ -65,12 +67,12 @@ CREATE TABLE Contactos (
     telefono VARCHAR(255)
 );
 
-CREATE TABLE Galeria(
-
-ID INT AUTO_INCREMENT,
-Nombre VARCHAR(250),
-ruta_imagen VARCHAR(250)
+CREATE TABLE Galeria (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(250),
+    ruta_imagen VARCHAR(250)
 );
+
 
 /*INSERTS EVENTOS_FECHA*/
 INSERT INTO `evento_agenda`(`Fecha`, `Disponibilidad`, `Descripcion`, `correo`, `telefono`) VALUES ('2024-01-02',0,null,null,null);

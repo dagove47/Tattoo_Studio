@@ -20,7 +20,18 @@
 </head>
 <body>
     <header>
-      <?php include '../components/navbar.php'; ?>
+        <?php
+        session_start();
+
+        // Verificar si el usuario ha iniciado sesión
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+            // Si el usuario ha iniciado sesión, incluir el navbar2
+            include '../components/navbar.php';
+        } else {
+            // Si el usuario no ha iniciado sesión, incluir el navbar1
+            include '../components/navbarNoLogin.php';
+        }
+        ?>
     </header>
     <main>
       <section class="home" id="home">
