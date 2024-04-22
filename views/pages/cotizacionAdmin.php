@@ -166,7 +166,7 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-            <div class="card">
+          <div class="card">
     <div class="card-header">
         <h3 class="card-title">Cotizaciones del Cliente</h3>
     </div>
@@ -181,7 +181,6 @@
                 <th>Descripcion</th>
                 <th>Estilo</th>
                 <th>Imagen</th>
-                <th>Acciones</th>
             </thead>
             <tbody>
 
