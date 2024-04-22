@@ -16,7 +16,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
-    
+
 
 
 </head>
@@ -165,7 +165,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="./home.php" class="brand-link">
                 <img src="../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Nabularte</span>
             </a>
@@ -178,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <img src="../assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">Administrador</a>
                     </div>
                 </div>
 
@@ -272,16 +272,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Main content -->
 
             <div class="container mt-5">
-                <h1 class="text-center">Ingreso de Imágenes para Galería</h1>
-
+                <h1 class="text-center text-primary">Ingreso de Imágenes para Galería</h1>
+                </br>
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="card text-center mx-auto">
                             <div class="card-body">
-                                <h1 class="card-title mb-4">Ingresar nueva Imagen</h1>
+
                                 <form id="form" method="POST" action="../../controllers/galeriaAdminController.php" enctype="multipart/form-data">
                                     <div class="mb-3">
-                                        <label for="nombre" class="form-label">Nombre de la Imagen</label>
+                                        <label for="image" class="form-label">Nombre Imagen</label>
                                         <input type="text" id="nombre" class="form-control" name="nombre" placeholder="Nombre de la Imagen" required>
                                     </div>
                                     <div class="mb-3">
