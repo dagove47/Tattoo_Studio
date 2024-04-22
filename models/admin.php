@@ -3,24 +3,24 @@ require_once "../Config/Conexion.php";
 
 class Admin {
 
-    public static function buscarPorUsuario($usuario) {
+    public static function buscarPorUsuario($email) {
         try {
             $conexion = Conexion::conectar();
-            $sql = "SELECT * FROM administradores WHERE Nombre_Usuario = ?";
+            $sql = "SELECT * FROM administradores WHERE CorreoElectronico = ?";
             $stmt = $conexion->prepare($sql);
-            $stmt->execute([$usuario]);
+            $stmt->execute([$email]);
             return $stmt->fetch();
         } catch (PDOException $ex) {
             return null;
         }
     }
 
-    public static function iniciarSesion($usuario, $password) {
+    public static function iniciarSesion($email, $password) {
         // Busca al admin por su correo electrónico
-        $admin = self::buscarPorUsuario($usuario);
+        $admin = self::buscarPorUsuario($email);
 
         // Si el admin no existe o la contraseña es incorrecta, retorna falso
-        if (!$admin || !password_verify($password, $admin["Contra"])) {
+        if (!$admin || !password_verify($password, $admin["Contraseña"])) {
             return false;
         }
 

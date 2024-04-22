@@ -12,7 +12,7 @@
             <a class="nav-link px-3" href="./home.php">Inicio</a>
             </li>
             <li class="nav-item d-flex justify-content-center">
-            <a class="nav-link px-3" href="./calculator.php">Calculadora</a>
+            <a class="nav-link px-3" href="./calculator.php">test</a>
             </li>
             <li class="nav-item d-flex justify-content-center">
             <a class="nav-link px-3" href="./galery.php">Galeria</a>

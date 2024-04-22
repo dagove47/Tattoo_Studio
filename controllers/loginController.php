@@ -2,28 +2,30 @@
 require_once "../models/clientes.php";
 require_once "../models/admin.php";
 
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["email"]) && isset($_POST["password"])) {
         $password = $_POST["password"];
         $email = $_POST["email"];
 
-        if (strpos($email, "@") == false) {
+        if (strpos($email, "@admin.com")) {
             $admin = Admin::buscarPorUsuario($email);
 
-            if ($admin && password_verify($password, $admin['Contra'])) {
+            if ($admin && $password == $admin['Contraseña']) {
                 // Iniciar sesión y redirigir al panel de control o página de bienvenida
-                // Por ahora solo redirigir a una página de ejemplo
-                header("Location: ../views/pages/adminDasboard.php");
+                $_SESSION['loggedin'] = true; // Asignar valor a $_SESSION['loggedin']
+                header("Location: ../views/pages/adminDashboard.php");
                 exit();
             } else {
-                echo "Usuario o contraseña de cuenta Admin incorrectos.";
+                echo "Usuario o contraseña de cuenta Admin incorrectos. " . $admin['Contraseña'];
             }
         } else {
             $cliente = Cliente::buscarPorEmail($email);
 
             if ($cliente && password_verify($password, $cliente['Contraseña'])) {
                 // Iniciar sesión y redirigir al panel de control o página de bienvenida
-                // Por ahora solo redirigir a una página de ejemplo
+                $_SESSION['loggedin'] = true; // Asignar valor a $_SESSION['loggedin']
                 header("Location: ../views/pages/home.php");
                 exit();
             } else {
@@ -32,3 +34,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+?>

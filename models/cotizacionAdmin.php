@@ -5,7 +5,7 @@ class Cotizacion extends Conexion
 {
     protected static $cnx;
 
-    private $id;
+    private $ID;
     private $nombre;
     private $telefono;
     private $correo;
@@ -15,12 +15,12 @@ class Cotizacion extends Conexion
 
     public function getId()
     {
-        return $this->id;
+        return $this->ID;
     }
 
-    public function setId($id)
+    public function setId($ID)
     {
-        $this->id = $id;
+        $this->ID = $ID;
     }
 
     public function getNombre()
@@ -103,7 +103,7 @@ class Cotizacion extends Conexion
             $resultado = self::$cnx->query($query);
             while ($cotizacion = $resultado->fetch(PDO::FETCH_ASSOC)) {
                 $objCotizacion = new Cotizacion();
-                $objCotizacion->setId($cotizacion['id']);
+                $objCotizacion->setId($cotizacion['ID']);
                 $objCotizacion->setNombre($cotizacion['Nombre']);
                 $objCotizacion->setTelefono($cotizacion['Telefono']);
                 $objCotizacion->setCorreo($cotizacion['Correo']);
@@ -122,11 +122,11 @@ class Cotizacion extends Conexion
     }
     public function eliminarCotizacion($id)
 {
-    $query = "DELETE FROM cotizaciones WHERE id = :id";
+    $query = "DELETE FROM cotizaciones WHERE ID = :ID";
     try {
         self::getConexion();
         $statement = self::$cnx->prepare($query);
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
+        $statement->bindParam(':ID', $ID, PDO::PARAM_INT);
         $success = $statement->execute();
         self::desconectar();
         return $success;

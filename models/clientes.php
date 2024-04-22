@@ -38,6 +38,7 @@ class Cliente {
         // Inicia la sesión y almacena el ID del cliente en la variable de sesión
         session_start();
         $_SESSION["cliente_id"] = $cliente["ID"];
+        $_SESSION['loggedin'] = true;
 
         return true;
     }
