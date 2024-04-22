@@ -167,7 +167,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Brand Logo -->
       <a href="index3.html" class="brand-link">
         <img src="../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">Nabularte</span>
       </a>
 
       <!-- Sidebar -->
@@ -202,7 +202,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!--Menu de Agenda-->
             <li class="nav-item menu-open">
-              <a href="./dashboard.php" class="nav-link active">
+              <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Manejo de Agenda
@@ -291,9 +291,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           </div>
 
-          <div id="form" class="row ">
+          <div id="form1" class="row ">
 
-            <form method="POST" action="../../controllers/agendaAdminController.php?op=insertar">
+            <form id="form"method="POST" action="../../controllers/agendaAdminController.php?op=insertar">
 
               <h1>Ingresar nueva Fecha de Evento</h1>
 
@@ -351,6 +351,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="../plugins//DataTables/datatables.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
   <script src="../assets/js/agendaAdmin.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- REQUIRED SCRIPTS -->
+    <script>
+        $(document).ready(function() {
+            $('#form').submit(function(e) {
+                e.preventDefault(); // Evitar el envío del formulario predeterminado
+
+                // Enviar el formulario mediante AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: '../../controllers/agendaAdminController.php?op=insertar',
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(response) {
+                        if (response.trim() === 'success') {
+                            // Mostrar SweetAlert de éxito si la cotización se guardó correctamente
+                            Swal.fire('Fecha guardada correctamente!', '', 'success').then(function() {
+                                // Restablecer el formulario después de cerrar el SweetAlert
+                                $('#form')[0].reset();
+                            });
+                        } else {
+                            // Mostrar SweetAlert de error si hubo un problema al guardar la cotización
+                            Swal.fire('¡Error al guardar la fecha!', '', 'error');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 
 
   <script src="../plugins/bootstrap/js/bootstrap.bundle.js"></script>

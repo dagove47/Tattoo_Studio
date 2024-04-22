@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+<?php require "../../models/charts.php";
+    $chart = new Charts();
+    $chartD1 = $chart->Chart1();
+    $chartD2 = $chart->Chart2();
+    $chartD3 = $chart->Chart3();
+    $chartD4 = $chart->Chart4();
+    $chartD5 = $chart->Chart5();
+    $chartD6 = $chart->Chart6();
+
+    $chart1 = json_encode($chartD1);
+    $chart2 = json_encode($chartD2);
+    $chart3 = json_encode($chartD3);
+    $chart4 = json_encode($chartD4);
+    $chart5 = json_encode($chartD5);
+    $chart6 = json_encode($chartD6);
+    ?>
 <html lang="en">
 
 <head>
@@ -16,14 +28,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
-    
-
-
+    <link rel="stylesheet" href="../assets/css/agendaAdmin.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -38,7 +47,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
-
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
@@ -62,7 +70,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </form>
                     </div>
                 </li>
-
                 <!-- Messages Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -161,7 +168,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
         </nav>
         <!-- /.navbar -->
-
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -169,7 +175,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <img src="../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Nabularte</span>
             </a>
-
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
@@ -181,7 +186,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="#" class="d-block">Alexander Pierce</a>
                     </div>
                 </div>
-
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
@@ -193,62 +197,59 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                     </div>
                 </div>
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
                         <!--Menu de Agenda-->
                         <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Manejo de Agenda
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="./agendaAdmin.php" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Agenda</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="./graficosAdmin.php" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Graficos</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="./cotizacionAdmin" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Cotizacion</p>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="./galeriaAdmin.php" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Galeria</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Manejo de Agenda
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./agendaAdmin.php" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Agenda</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./graficosAdmin.php" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Graficos</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./cotizacionAdmin.php" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Cotizacion</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./galeriaAdmin.php" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Galeria</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
                         <!--Menu de busqueda de datos -->
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
         </aside>
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -256,7 +257,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Starter Page</h1>
+                            <h1 class="m-0">Graficos de Reportes</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -268,37 +269,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
-
             <!-- Main content -->
-
-            <div class="container mt-5">
-                <h1 class="text-center">Ingreso de Imágenes para Galería</h1>
-
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="card text-center mx-auto">
-                            <div class="card-body">
-                                <h1 class="card-title mb-4">Ingresar nueva Imagen</h1>
-                                <form id="form" method="POST" action="../../controllers/galeriaAdminController.php" enctype="multipart/form-data">
-                                    <div class="mb-3">
-                                        <label for="nombre" class="form-label">Nombre de la Imagen</label>
-                                        <input type="text" id="nombre" class="form-control" name="nombre" placeholder="Nombre de la Imagen" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="image" class="form-label">Imagen a ingresar</label>
-                                        <input type="file" class="form-control" id="image" name="imagen" accept="image/jpeg, image/png, image/gif" required>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Enviar</button>
-                                </form>
-                            </div>
-                        </div>
+            <br />
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div id="chart" style="height: 400px; width: 400px;"></div>
+                    </div>
+                    <div class="col-md-5">
+                        <div id="chart2" style="height: 400px; width: 400px;"></div>
                     </div>
                 </div>
             </div>
+            <br />
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div id="chart3" style="height: 400px; width: 400px;"></div>
+                    </div>
+                    <div class="col-md-5">
+                        <div id="chart4" style="height: 400px; width: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div id="chart5" style="height: 400px; width: 400px;"></div>
+                    </div>
+                    <div class="col-md-5">
+                        <div id="chart6" style="height: 400px; width: 400px;"></div>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid --> <br />
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
@@ -308,7 +315,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
         </aside>
         <!-- /.control-sidebar -->
-
         <!-- Main Footer -->
         <footer class="main-footer">
             <!-- To the right -->
@@ -320,50 +326,138 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </footer>
     </div>
     <!-- ./wrapper -->
+    <!-- REQUIRED SCRIPTS -->
+    <script>
+        window.onload = function() {
+            var chart = new CanvasJS.Chart("chart", {
+                animationEnabled: true,
+                theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: "Los 5 clientes que mas han invertido"
+                },
+                data: [{
+                    type: "bar",
+                    yValueFormatString: "#,##",
+                    dataPoints: [
+                        <?php foreach ($chartD1 as $chart):?>
+                        { label: "<?php echo $chart->Nombre;?>", y: <?php echo $chart->TotalGastado;?> },
+                        <?php endforeach; ?>
+                    ]
+                }]
+            });
+            chart.render();
+
+            var chart = new CanvasJS.Chart("chart2", {
+                animationEnabled: true,
+                theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: "Las 5 tecnicas mas tatuadas"
+                },
+                data: [{
+                    type: "bar",
+                    yValueFormatString: "#,##",
+                    dataPoints: [
+                        <?php foreach ($chartD2 as $chart):?>
+                        { label: "<?php echo $chart->Categoria;?>", y: <?php echo $chart->NumeroDeTatuajes;?> },
+                        <?php endforeach; ?>
+                    ]
+                }]
+            });
+            chart.render();
+
+            var chart = new CanvasJS.Chart("chart3", {
+                animationEnabled: true,
+                theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: "Las 5 zonas que mas tatuadas"
+                },
+                data: [{
+                    type: "bar",
+                    yValueFormatString: "#,##",
+                    dataPoints: [
+                        <?php foreach ($chartD3 as $chart):?>
+                        { label: "<?php echo $chart->ZonaCuerpo;?>", y: <?php echo $chart->NumeroDeTatuajes;?> },
+                        <?php endforeach; ?>
+                    ]
+                }]
+            });
+            chart.render();
+
+            var chart = new CanvasJS.Chart("chart4", {
+                animationEnabled: true,
+                theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: "Clientes que más han pagado por una categoría de tatuaje"
+                },
+                data: [{
+                    type: "bar",
+                    yValueFormatString: "#,##",
+                    dataPoints: [
+                        <?php foreach ($chartD4 as $chart):?>
+                        { label: "<?php echo $chart->Nombre;?>", y: <?php echo $chart->TotalGastado;?> },
+                        <?php endforeach; ?>
+                    ]
+                }]
+            });
+            chart.render();
+
+            var chart = new CanvasJS.Chart("chart5", {
+                animationEnabled: true,
+                theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: "Las 5 edades que mas se tatuan"
+                },
+                data: [{
+                    type: "bar",
+                    yValueFormatString: "#,##",
+                    dataPoints: [
+                        <?php foreach ($chartD5 as $chart):?>
+                        { label: "<?php echo $chart->Edad;?>", y: <?php echo $chart->NumeroDeTatuajes;?> },
+                        <?php endforeach; ?>
+                    ]
+                }]
+            });
+            chart.render();
+
+            var chart = new CanvasJS.Chart("chart6", {
+                animationEnabled: true,
+                theme: "dark1", // "light1", "light2", "dark1", "dark2"
+                title: {
+                    text: "Las 5 tecnicas que se tatuan mas"
+                },
+                data: [{
+                    type: "bar",
+                    yValueFormatString: "#,##",
+                    dataPoints: [
+                        <?php foreach ($chartD6 as $chart):?>
+                        { label: "<?php echo $chart->Tecnica;?>", y: <?php echo $chart->NumTatuajes;?> },
+                        <?php endforeach; ?>
+                    ]
+                }]
+            });
+            chart.render();
+
+        }
+    </script>
+
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../plugins//DataTables/datatables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!-- REQUIRED SCRIPTS -->
-    <script>
-        $(document).ready(function() {
-            $('#form').submit(function(e) {
-                e.preventDefault(); // Evitar el envío del formulario predeterminado
-
-                // Enviar el formulario mediante AJAX
-                $.ajax({
-                    type: 'POST',
-                    url: '../../controllers/galeriaAdminController.php',
-                    data: new FormData(this),
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    success: function(response) {
-                        if (response.trim() === 'success') {
-                            // Mostrar SweetAlert de éxito si la cotización se guardó correctamente
-                            Swal.fire('¡Cotización guardada correctamente!', '', 'success').then(function() {
-                                // Restablecer el formulario después de cerrar el SweetAlert
-                                $('#form')[0].reset();
-                            });
-                        } else {
-                            // Mostrar SweetAlert de error si hubo un problema al guardar la cotización
-                            Swal.fire('¡Error al guardar la cotización!', '', 'error');
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-
-
-
-
+    <script src="../assets/js/agendaAdmin.js"></script>
 
 
     <script src="../plugins/bootstrap/js/bootstrap.bundle.js"></script>
 
+    <!-- AdminLTE App -->
+    <script src="../assets/js/adminlte.min.js"></script>
 </body>
 
 </html>

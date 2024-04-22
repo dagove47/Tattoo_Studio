@@ -42,19 +42,51 @@ listarUsuariosTodos();
 
 // Función para eliminar una fecha
 function eliminarFecha(fecha) {
-  if (confirm("¿Estás seguro de que quieres eliminar esta fecha?")) {
-      // Realizar la solicitud AJAX al controlador para eliminar la fecha
-      $.ajax({
-          url: "../../controllers/agendaAdminController.php?op=eliminar_fecha",
-          type: "POST",
-          data: { fecha: fecha },
-          success: function (response) {
-              // Recargar la tabla después de eliminar la fecha
-              listarUsuariosTodos();
-          },
-          error: function (xhr, status, error) {
-              console.log("Error en la solicitud AJAX:", error);
-          }
-      });
+    // Mostrar Sweet Alert para confirmar la eliminación de la fecha
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "¡No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, elimínalo!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Realizar la solicitud AJAX al controlador para eliminar la fecha
+            $.ajax({
+                url: "../../controllers/agendaAdminController.php?op=eliminar_fecha",
+                type: "POST",
+                data: { fecha: fecha },
+                success: function (response) {
+                    if (response.trim() === 'success') {
+                        // Recargar la tabla después de eliminar la fecha
+                        listarUsuariosTodos();
+                        // Mostrar Sweet Alert de éxito
+                        Swal.fire(
+                            'Eliminado!',
+                            'La fecha ha sido eliminada.',
+                            'success'
+                        );
+                    } else {
+                        // Mostrar Sweet Alert de error si hubo un problema al eliminar la fecha
+                        Swal.fire(
+                            'Error',
+                            'Hubo un problema al eliminar la fecha.',
+                            'error'
+                        );
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log("Error en la solicitud AJAX:", error);
+                    // Mostrar Sweet Alert de error si hubo un error en la solicitud AJAX
+                    Swal.fire(
+                        'Error',
+                        'Hubo un problema al eliminar la fecha.',
+                        'error'
+                    );
+                }
+            });
+        }
+    });
   }
-}

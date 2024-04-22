@@ -15,10 +15,10 @@ class AgendaAdminController
             // Llamar al modelo para guardar el contacto
             if (AgendaAdmin::insertarNuevasFechas($fecha)) {
                 // Mostrar un mensaje de éxito y redirigir a la página de contacto
-                echo "<script>alert('¡Ingresado correctamente!'); window.location.href='http://localhost/Tattoo_Studio/views/pages/agendaAdmin.php';</script>";
+                echo "success";
             } else {
                 // Mostrar un mensaje de error
-                echo "<script>alert('La fecha ingresada ya existe! Por favor, elige otra fecha.'); window.location.href='http://localhost/Tattoo_Studio/views/pages/agendaAdmin.php'</script>";
+                echo "error";
             }
         }
     }
@@ -61,9 +61,9 @@ switch ($_GET["op"]) {
         $fecha = $_POST['fecha'];
         // Llamar al modelo para eliminar la fecha
         if (AgendaAdmin::eliminarFecha($fecha)) {
-            echo json_encode(["success" => true]);
+            echo "success";
         } else {
-            echo json_encode(["success" => false, "message" => "Error al eliminar la fecha"]);
+            echo "error";
         }
         break;
 }

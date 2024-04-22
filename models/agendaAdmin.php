@@ -124,7 +124,6 @@ public function listarFechasDb()
         $conexion = Conexion::conectar();
         // Verificar si la fecha está disponible
         if (!self::fechaExiste($fecha)) {
-            echo "La fecha no existe en la base de datos. Insertando...";
             $query = "INSERT INTO evento_agenda (Fecha, Disponibilidad, Descripcion, correo, telefono) VALUES (?, 0, null, null, null)";
             try {
                 $stmt = $conexion->prepare($query);
