@@ -20,6 +20,12 @@
             <li class="nav-item d-flex justify-content-center">
             <a class="nav-link px-3" href="./contact.php">Contacto</a>
             </li>
+            <li class="nav-item d-flex justify-content-center">
+            <a class="nav-link px-3" href="./login.php">Ingresar</a>
+            </li>
+            <li class="nav-item d-flex justify-content-center">
+            <a class="nav-link px-3" href="./register.php">Registrarse</a>
+            </li>
         </ul>
         </div>
     </div>

@@ -20,7 +20,19 @@
 </head>
 <body>
     <header>
-      <?php include '../components/navbar.php'; ?>
+      <?php
+        session_start();
+
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+            if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] === true) {
+                include '../components/navbarAdmin.php';
+            } else {
+                include '../components/navbarUser.php';
+            }
+        } else {
+            include '../components/navbar.php';
+        }
+      ?>
     </header>
     <main>
       <section class="calculator" id="calculator">

@@ -14,7 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($admin && $password == $admin['Contraseña']) {
                 // Iniciar sesión y redirigir al panel de control o página de bienvenida
-                $_SESSION['loggedin'] = true; // Asignar valor a $_SESSION['loggedin']
+                $_SESSION['isAdmin'] = true; // Asignar valor a $_SESSION['loggedin']
+                $_SESSION['loggedin'] = true;
                 header("Location: ../views/pages/adminDashboard.php");
                 exit();
             } else {
@@ -25,7 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($cliente && password_verify($password, $cliente['Contraseña'])) {
                 // Iniciar sesión y redirigir al panel de control o página de bienvenida
-                $_SESSION['loggedin'] = true; // Asignar valor a $_SESSION['loggedin']
+                $_SESSION['isAdmin'] = false; // Asignar valor a $_SESSION['loggedin']
+                $_SESSION['loggedin'] = true;
                 header("Location: ../views/pages/home.php");
                 exit();
             } else {

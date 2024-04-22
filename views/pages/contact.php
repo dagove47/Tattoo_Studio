@@ -16,7 +16,19 @@
 </head>
 <body>
     <header>
-        <?php include '../components/navbar.php'; ?>
+      <?php
+        session_start();
+
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+            if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] === true) {
+                include '../components/navbarAdmin.php';
+            } else {
+                include '../components/navbarUser.php';
+            }
+        } else {
+            include '../components/navbar.php';
+        }
+      ?>
     </header>
     <main class="coverImageContainer">
         <section class="coverImage">
@@ -64,9 +76,7 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <p>&copy; 2024 <span style="color: #F29727;">Nebularte</span> Tattoo</p>
-    </footer>
+    <?php include '../components/footer.php'; ?>
  
 </body>
 </html>

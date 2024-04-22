@@ -15,15 +15,20 @@
 
 <body class="login_body">
 
-<header>
-        <div class="main_buttons">
-        <div class="main_btn"><a href="../index.php">Inicio</a></div>
-            <div class="main_btn"><a href="./register.php">Registrarse</a></div>
-            <div class="main_btn"><a href="./login.php">Iniciar sesión</a></div> 
-            <div class="main_btn"><a href="./galery.php">Galeria </a></div> 
-            <div class="main_btn"><a href="./contact.php">Contacto</a></div> 
+    <header>
+      <?php
+        session_start();
 
-        </div>
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+            if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] === true) {
+                include '../components/navbarAdmin.php';
+            } else {
+                include '../components/navbarUser.php';
+            }
+        } else {
+            include '../components/navbar.php';
+        }
+      ?>
     </header>
 
 

@@ -9,13 +9,22 @@
         <div class="me-auto"></div>
         <ul class="navbar-nav">
             <li class="nav-item d-flex justify-content-center">
+            <a class="nav-link px-3" href="./adminDashboard.php">Admin</a>
+            </li>
+            <li class="nav-item d-flex justify-content-center">
             <a class="nav-link px-3" href="./home.php">Inicio</a>
             </li>
             <li class="nav-item d-flex justify-content-center">
-            <a class="nav-link px-3" href="./calculator.php">test</a>
+            <a class="nav-link px-3" href="./calculator.php">Calculadora</a>
             </li>
             <li class="nav-item d-flex justify-content-center">
-            <a class="nav-link px-3" href="./galery.php">Galeria</a>
+            <a class="nav-link px-3" href="./galery.php">Galería</a>
+            </li>
+            <li class="nav-item d-flex justify-content-center">
+            <a class="nav-link px-3" href="./cotizacion.php">Cotización</a>
+            </li>
+            <li class="nav-item d-flex justify-content-center">
+            <a class="nav-link px-3" href="./agenda.php">Agenda</a>
             </li>
             <li class="nav-item d-flex justify-content-center">
             <a class="nav-link px-3" href="./contact.php">Contacto</a>
