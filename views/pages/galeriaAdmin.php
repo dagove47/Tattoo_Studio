@@ -227,7 +227,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="./cotizacionAdmin" class="nav-link active">
+                                    <a href="./cotizacionAdmin.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Cotizacion</p>
                                     </a>
