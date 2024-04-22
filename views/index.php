@@ -31,16 +31,16 @@
                 <div class="me-auto"></div>
                 <ul class="navbar-nav">
                     <li class="nav-item d-flex justify-content-center">
-                    <a class="nav-link px-3" href="./home.php">Inicio</a>
+                    <a class="nav-link px-3" href="./pages/home.php">Inicio</a>
                     </li>
                     <li class="nav-item d-flex justify-content-center">
-                    <a class="nav-link px-3" href="./calculator.php">Calculadora</a>
+                    <a class="nav-link px-3" href="./pages/calculator.php">Calculadora</a>
                     </li>
                     <li class="nav-item d-flex justify-content-center">
-                    <a class="nav-link px-3" href="./galery.php">Galeria</a>
+                    <a class="nav-link px-3" href="./pages/galery.php">Galeria</a>
                     </li>
                     <li class="nav-item d-flex justify-content-center">
-                    <a class="nav-link px-3" href="./contact.php">Contacto</a>
+                    <a class="nav-link px-3" href="./pages/contact.php">Contacto</a>
                     </li>
                 </ul>
                 </div>

@@ -81,7 +81,5 @@
       </section>
     </main>
     <?php include '../components/footer.php'; ?>
-
-    <script src="../static/js/app.js"></script>
 </body>
 </html>

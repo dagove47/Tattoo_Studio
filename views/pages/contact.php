@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Encabezado y estilos -->
+    <!-- favicon -->
+    <link rel="icon" href="../assets/images/tattoo-favicon.png" type="image/x-icon"
+        title="Tattoo icons created by Freepik - Flaticon from www.flaticon.com" />
     <title>Contacto - Tattoo Studio</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"

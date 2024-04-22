@@ -29,6 +29,9 @@
             <li class="nav-item d-flex justify-content-center">
             <a class="nav-link px-3" href="./contact.php">Contacto</a>
             </li>
+            <li class="nav-item d-flex justify-content-center">
+            <a class="nav-link px-3" href="./pages/login.php">Salir</a>
+            </li>
         </ul>
         </div>
     </div>

@@ -13,6 +13,10 @@ header {
     width: 100%;
 }
 
+main {
+    margin-top: 100px;
+}
+
 .main {
     width: 100%;
     padding-left: 25px;
